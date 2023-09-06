@@ -1,0 +1,51 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.image-container {
+  perspective: 1000px;
+}
+
+.image-card {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.image-front,
+.image-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.image-front {
+  transform: rotateY(0deg);
+  transition: opacity 0.5s ease;
+}
+
+.image-back {
+  transform: rotateY(180deg);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.image-card:hover {
+  transform: rotateY(180deg);
+}
+
+.image-card:hover .image-front {
+  opacity: 0;
+}
+
+.image-card:hover .image-back {
+  opacity: 1;
+}

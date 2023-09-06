@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover Effect</title>
+  <style>
+    /* กำหนดขนาดของรูปภาพ */
+    .image-container {
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* กำหนดรูปภาพที่เริ่มต้น */
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      transition: transform 1s ease;
+      /* เพื่อสร้างเอฟเฟกต์การหมุน */
+    }
+
+    /* สร้างเอฟเฟกต์เมื่อโฮเวอร์รูปภาพ */
+    .image-container:hover img {
+      transform: rotateY(180deg);
+      /* หมุนรูปภาพ 180 องศา */
+    }
+
+    /* กำหนดรูปภาพที่จะแสดงเมื่อโฮเวอร์ */
+    .image-container .hover-image {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      /* ซ่อนรูปภาพเริ่มต้น */
+      transition: opacity 1s ease;
+      /* เพื่อสร้างเอฟเฟกต์การเปลี่ยนรูปภาพ */
+    }
+
+    /* แสดงรูปภาพที่เปลี่ยนเมื่อโฮเวอร์ */
+    .image-container:hover .hover-image {
+      opacity: 1;
+      /* แสดงรูปภาพที่เปลี่ยน */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="image-container">
+    <!-- รูปภาพเริ่มต้น -->
+    <img src="assets/img/executive/sate.jpg" alt="Start Image">
+    <!-- รูปภาพที่เปลี่ยนเมื่อโฮเวอร์ -->
+    <img class="hover-image" src="assets/img/executive/sate1.jpg" alt="Hover Image">
+  </div>
+</body>
+
+</html>
